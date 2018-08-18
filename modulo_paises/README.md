@@ -39,6 +39,3 @@ e substituição, logo em seguida é rodado novamente o programa paises_1.rb
 
 >>> `all-zones`
 >>>> ..varios_arquivos..
-
-
--
