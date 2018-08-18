@@ -1,0 +1,62 @@
+Instruções para deixar eth0 e eth1(a placa de rede que vai no usb) em modo bridge
+
+
+primeiro, é necessário instalar:
+
+	brigde-utils
+
+(pode ser instalado com apt-get install)
+
+
+
+Depois tem que habilitar o forward de portas no arquivo /etc/sysctl.conf
+
+descomentando as linhas
+
+
+net.ipv4.ip_forward=1
+
+e 
+
+net.ipv6.ip_forward=1
+
+
+Depois disso, ja podemos comecar a criar o bridge
+
+
+no arquivo /etc/network/interfaces
+
+--------------------------------
+
+ ...
+auto eth0
+allow-hotplug eth0
+iface eth0 inet manual
+
+auto eth1
+allow-hotplug eth1
+iface eth1 inet manual
+
+auto br0
+iface br0 inet manual
+#pre-up /sbin/ifconfig eth0 up
+#pre-up /sbin/ifconfig eth1 up
+bridge_ports eth0 eth1
+ ... 
+--------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
