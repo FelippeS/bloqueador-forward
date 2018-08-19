@@ -1,4 +1,4 @@
-# Concat de strings
+# Concat de strings antes e depois da entrada
 # José Luiz Corrêa Junior - juninhoojl
 # Escrito em Ruby
 # ----------------------------------------
