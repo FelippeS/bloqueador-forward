@@ -3,8 +3,15 @@
 # Escrito em Ruby
 # ----------------------------------------
 
-#caminho configuracao
-arq_configuracao = './pre_config'
+
+##confere se foi executado com argumento
+if ARGV[0] == nil
+	puts "\tParametro de execucao: <nome_arquivo_configuracao>\n"
+	exit
+end
+
+#caminho configuracao capturado pelo parametro de execucao 0
+arq_configuracao = ARGV[0]
 configs=File.open(arq_configuracao).read
 
 # Item 0 = arquivo de entrada
