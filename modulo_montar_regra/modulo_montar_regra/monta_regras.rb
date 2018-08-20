@@ -4,14 +4,23 @@
 # ----------------------------------------
 
 
+nome_conf = 'pre_config'
+
+#caso não exista parametro de execucao sera usado o arquivo "pre_conf"
 ##confere se foi executado com argumento
-if ARGV[0] == nil
-	puts "\tParametro de execucao: <nome_arquivo_configuracao>\n"
-	exit
+if ARGV[0] != nil
+	##artribuicao de valor para nome do pre_conf caso argv[0] exista
+	arq_configuracao = ARGV[0]
+elsif ARGV[0] == nil && File.file?(nome_conf)
+	##artribuicao de valor para nome do pre_conf caso argv[0] nao exista e tenha arquivo
+	arq_configuracao = 'pre_config'
+else #nao existe nenhum nem outro
+	puts "\t O arquivo #{nome_conf} nao existe e nao foi passado parametro\n"
+	puts "\n Ou coloque o nome do arquivo de arq_configuracao <nome_conf>\n"
+	exit(1)
+
 end
 
-#caminho configuracao capturado pelo parametro de execucao 0
-arq_configuracao = ARGV[0]
 configs=File.open(arq_configuracao).read
 
 # Item 0 = arquivo de entrada
