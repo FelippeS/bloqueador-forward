@@ -7,7 +7,7 @@
 
 Esse módulo somente recebe um arquivo de execução, `pre-config`, o qual tem o nome de um arquivo de entrada, ex.: `entrada.txt`, um arquivo de saida, ex.: `saida.txt`, strings para adicionar antes e depois de cada linha no arquivo de entrada!
 
-###Exemplo do arquivo pre-config:
+### Exemplo do arquivo pre-config:
 
 ```
 ./patch/entrada.txt
@@ -28,6 +28,11 @@ bla bla bla <linha n+2 entrada.txt>ble ble ble
 bla bla bla <linha n+3 entrada.txt>ble ble ble
 	...
 ```
+### Caso queira utilizar arquivo de configuração com outro nome
+
+Adicione o parametro de execução `<nome_arquivo_configurações>`
+
+* Isso é útil para poder deixar vários arquivos de configuração no mesmo local e alternar entre eles quando desejar!
 
 ### Importante:
 
