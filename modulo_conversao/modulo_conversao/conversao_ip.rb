@@ -87,6 +87,10 @@ if som_ips != []
 	#fechar arquivo de saida
 	saida_arquivo.close
 
+else#somente cria o arquivo de saida, para nao dar problema com os outros modulos
+	saida_arquivo = File.new(arq_saida, "w")
+	saida_arquivo.close
+
 end
 
 

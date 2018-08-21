@@ -1,38 +1,39 @@
-## Módulo Montar Regras
+## Módulo Conversão
 
 > Autor: José Luiz Corrêa Junior - [GitHub](https://github.com/juninhoojl) - <juninhopc@icloud.com>
 > > Escrito em: Ruby
 
 ### Breve descrição:
 
-Esse módulo somente recebe um arquivo de execução, `pre-config`, o qual tem o nome de um arquivo de entrada, ex.: `entrada.txt`, um arquivo de saida, ex.: `saida.txt`, strings para adicionar antes e depois de cada linha no arquivo de entrada!
+Esse módulo recebe um arquivo de entrada: `entrada.txt` o qual contém IPs e Links misturados e retorna `saida.txt` que contém somente IPs, todos os IPs para cada Link, se existir!
 
-### Exemplo do arquivo pre-config:
+### Exemplo do funcionamento
 
-```
-./patch/entrada.txt
-./patch/saida.txt
-bla bla bla
-ble ble ble
-esp_antes=sim
-esp_depois=nao
+Tendo um arquivo `entrada.txt` assim: 
 
 ```
-* O arquivo de saida ficará assim:
+www.google.com
+www.uol.com.br
+192.168.1.11
+www.facebook.com
+www.youtube.com
+```
+Retornara um arquivo `saida.txt` assim: 
 
 ```
-	...
-bla bla bla <linha n entrada.txt>ble ble ble
-bla bla bla <linha n+1 entrada.txt>ble ble ble
-bla bla bla <linha n+2 entrada.txt>ble ble ble
-bla bla bla <linha n+3 entrada.txt>ble ble ble
-	...
+192.168.1.11
+172.217.162.164
+13.33.131.51
+13.33.131.46
+13.33.131.11
+13.33.131.115
+31.13.85.38
+172.217.29.110
+172.217.162.174
+172.217.30.14
+172.217.29.78
+
 ```
-### Caso queira utilizar arquivo de configuração com outro nome
-
-Adicione o parametro de execução `<nome_arquivo_configurações>`
-
-* Isso é útil para poder deixar vários arquivos de configuração no mesmo local e alternar entre eles quando desejar!
 
 ### Importante:
 
@@ -87,22 +88,19 @@ esp_depois=nao
 ```
 
 ### Estrutura:
-Consiste em 1 executáveis:
+Consiste em 1 programa:
 
-* montar_regra.rb
-
-E em 1 arquivo de configuração 
-
-* pre-conf
-
+* conversao_ip.rb
 
 ### Organização dos arquivos:
 
-> `modulo_montar_regra`
-> 
+> `modulo_conversao`
+>> `Arquivo`
+>>> entrada.txt
+>>> 
+>>>	 saida.txt
+>>>
 >> montar_regra.rb
-> 
->> pre-config
-> 
+
 
 ### Dica: Para entender melhor rode o exemplo como está!
