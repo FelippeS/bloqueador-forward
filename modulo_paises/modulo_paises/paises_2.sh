@@ -14,7 +14,7 @@ nome_programa=paises_1.rb
 if ping -c 4 $link_ping ; then
 
 	#download do arquivo compactado com as listas
-	wget $link
+	wget -q $link --no-check-certificate
 
 	#deletar pasta atual
 	rm -r $pasta_atual
