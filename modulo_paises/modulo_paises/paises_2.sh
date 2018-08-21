@@ -13,23 +13,23 @@ nome_programa=paises_1.rb
 #Antes de executar checa se está conectado
 if ping -c 4 $link_ping ; then
 
-#download do arquivo compactado com as listas
-wget $link
+	#download do arquivo compactado com as listas
+	wget $link
 
-#deletar pasta atual
-rm -r $pasta_atual
+	#deletar pasta atual
+	rm -r $pasta_atual
 
-#criar pasta nova
-mkdir $pasta_atual
+	#criar pasta nova
+	mkdir $pasta_atual
 
-#descompactar arquivo baixado
-tar -xvf all-zones.tar -C $pasta_atual
+	#descompactar arquivo baixado
+	tar -xvf all-zones.tar -C $pasta_atual
 
-#remove o arquivo sem descompactar
-rm all-zones.tar
+	#remove o arquivo sem descompactar
+	rm all-zones.tar
 
-#Aqui ja teria que executar de novo o programa que cria as listas novas de block
-ruby $nome_programa
+	#Aqui ja teria que executar de novo o programa que cria as listas novas de block
+	ruby $nome_programa
 
 fi
 
