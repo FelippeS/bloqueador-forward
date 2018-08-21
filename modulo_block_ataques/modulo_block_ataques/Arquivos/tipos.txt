@@ -1,0 +1,10 @@
+Ataques SSH
+Ataques Mail, Postfix
+Ataques Apache, Apache-DDOS, RFI-Attacks
+Ataques imap, sasl, pop3...
+Ataques FTP
+Tentaram Login em SIP-, VOIP- or Asterisk-Server
+Ataques RFI-Attacks, REG-Bots, IRC-Bots or BadBots
+IPs que efetuaram mais de 5.000 ataques
+Ataques ircbot 
+Ataques attacks Joomlas, Wordpress and other Web-Logins with Brute-Force Logins
