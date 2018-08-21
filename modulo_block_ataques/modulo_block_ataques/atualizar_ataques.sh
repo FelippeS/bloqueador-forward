@@ -33,29 +33,17 @@ if ping -c 4 $link_ping ; then
 	#criar pasta nova
 	mkdir $pasta_atual
 
-	#entrando na pasta atual
-
-
-
-
-
-
-
-
-
-	#download das listas de cada tipo de ataque
-	#wget lista_ssh
-	# wget lista_ftp -P ./Arquivos/listas
-	# wget lista_apache -P ./Arquivos/listas
-	# wget lista_imap -P ./Arquivos/listas
-	# wget lista_ftp -P ./Arquivos/listas
-	# wget lista_sip -P ./Arquivos/listas
-	# wget lista_bots -P ./Arquivos/listas
-	# wget lista_strongips -P ./Arquivos/listas
-	# wget lista_ircbot -P ./Arquivos/listas
-	# wget lista_brute -P ./Arquivos/listas
-	#Aqui ja teria que executar de novo o programa que cria as listas novas de block
-	#ruby $nome_programa
+#baixando cada lista ja no patch criado
+wget -q $lista_ssh -P $pasta_atual --no-check-certificate
+wget -q $lista_mail -P $pasta_atual --no-check-certificate
+wget -q $lista_apache -P $pasta_atual --no-check-certificate
+wget -q $lista_imap -P $pasta_atual --no-check-certificate
+wget -q $lista_ftp -P $pasta_atual --no-check-certificate
+wget -q $lista_sip -P $pasta_atual --no-check-certificate
+wget -q $lista_bots -P $pasta_atual --no-check-certificate
+wget -q $lista_strongips -P $pasta_atual --no-check-certificate
+wget -q $lista_ircbot -P $pasta_atual --no-check-certificate
+wget -q $lista_brute -P $pasta_atual --no-check-certificate
 
 fi
 
