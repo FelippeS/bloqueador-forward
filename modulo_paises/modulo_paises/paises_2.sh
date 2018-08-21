@@ -11,10 +11,10 @@ pasta_atual=./arquivos/all-zones
 nome_programa=paises_1.rb
 
 #Antes de executar checa se está conectado
-if ping -c 4 $link_ping ; then
+if ping -c 1 $link_ping ; then
 
 	#download do arquivo compactado com as listas
-	wget -q $link --no-check-certificate
+	wget $link
 
 	#deletar pasta atual
 	rm -r $pasta_atual

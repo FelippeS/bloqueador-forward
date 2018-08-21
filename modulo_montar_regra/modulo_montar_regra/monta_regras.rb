@@ -3,7 +3,6 @@
 # Escrito em Ruby
 # ----------------------------------------
 
-
 nome_conf = 'pre_config'
 
 #caso não exista parametro de execucao sera usado o arquivo "pre_conf"
