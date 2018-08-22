@@ -3,9 +3,7 @@
 # Escrito em Ruby
 # ----------------------------------------
 
-#metodo .uniq
-
-#caminhos
+#caminhos dos arquivos
 arq_entrada = './entrada.txt'
 arq_saida = './saida.txt'
 
@@ -16,12 +14,11 @@ val_entrada = File.readlines(arq_entrada).map do |line|
 #selecionando somente a coluna 0
 val_entrada.map! {|row| row[0]}
 
-#metodo uniq, para verificar se nao existe mais de uma vez o mesmo valor
-val_entrada.uniq!
-
 #criando arquivo de saida
 saida_arquivo = File.new(arq_saida, "w")
 
-saida_arquivo.puts val_entrada
+#escrevendo no arquivo de saida com metodo unic
+saida_arquivo.puts val_entrada.uniq
 
+#fechando arquivo de saida
 saida_arquivo.close

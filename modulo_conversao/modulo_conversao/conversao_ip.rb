@@ -42,8 +42,8 @@ val_entrada.each do |item|
 
 end
 
-n_ip.each do |item|
 #recebe os retornos/ips de cada host
+n_ip.each do |item|
 	retornos += Resolv.getaddresses(item)
 end
 
@@ -67,7 +67,7 @@ som_ips += lista_ok if lista_ok != []
 saida_arquivo = File.new(arq_saida, "w")
 
 #escreve no arquivo caso tenha algo
-saida_arquivo.puts som_ips if som_ips != []#escrevendo nele
+saida_arquivo.puts som_ips if som_ips != []
 	
 #fechando arquivo de saida
 saida_arquivo.close
