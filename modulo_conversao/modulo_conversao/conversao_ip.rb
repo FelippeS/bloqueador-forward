@@ -18,7 +18,7 @@ val_entrada = File.readlines(arq_entrada).map do |line|
 	  line.split.map(&:to_s)
 	end
 #selecionando somente a coluna 0
-val_entrada = val_entrada.map {|row| row[0]}
+val_entrada.map! {|row| row[0]}
 
 #lista dos que ja sao ips
 ja_ip = []
@@ -48,55 +48,29 @@ n_ip.each do |item|
 end
 
 #confere se existia algum que ja era ip
-if ja_ip != []
-	som_ips += ja_ip
-end
+som_ips += ja_ip if ja_ip != []
 
 #somente se existir algum retorno
 if retornos != []
 
 	retornos.each do |item| 
 		#confere se todos os retornos sao realmente ips
-		if IPAddress.valid?(item)
-			lista_ok << item
-		end
-
+		lista_ok << item if IPAddress.valid?(item)
 	end
 
 end
 
 #junta o som-ips com a lista ok se ela nao for nula
+som_ips += lista_ok if lista_ok != []
 
+#criar arquivo de saida
+saida_arquivo = File.new(arq_saida, "w")
 
-if lista_ok != []
-	som_ips += lista_ok
-end
-
-#somente se o som_ips nao for vazio
-
-if som_ips != []
-
-	#criar arquivo de saida
-	saida_arquivo = File.new(arq_saida, "w")
-
-	#escrevendo nele
-	som_ips.each do |item|
-		saida_arquivo.puts item
-	end
-
-	#fechar arquivo de saida
-	saida_arquivo.close
-
-else#somente cria o arquivo de saida, para nao dar problema com os outros modulos
-	saida_arquivo = File.new(arq_saida, "w")
-	saida_arquivo.close
-
-end
-
-
-
-
-
+#escreve no arquivo caso tenha algo
+saida_arquivo.puts som_ips if som_ips != []#escrevendo nele
+	
+#fechando arquivo de saida
+saida_arquivo.close
 
 
 
